@@ -30,10 +30,3 @@ dispatcher.add_handler(telegram.ext.CommandHandler("dev", dev))
 
 updater.start_polling()
 updater.idle()
-
-updater.start_polling()
-updater.idle()
-
-
-
-#check
