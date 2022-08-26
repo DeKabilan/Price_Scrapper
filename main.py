@@ -23,10 +23,17 @@ def run(update, context):
 def dev(update, context):
     update.message.reply_text("https://github.com/DeKabilan")
 
-dispatcher.add_handler(telegram.ext.COmmandHandler("start", start))
-dispatcher.add_handler(telegram.ext.COmmandHandler("help", help))
-dispatcher.add_handler(telegram.ext.COmmandHandler("run", run))
-dispatcher.add_handler(telegram.ext.COmmandHandler("dev", dev))
+dispatcher.add_handler(telegram.ext.CommandHandler("start", start))
+dispatcher.add_handler(telegram.ext.CommandHandler("help", help))
+dispatcher.add_handler(telegram.ext.CommandHandler("run", run))
+dispatcher.add_handler(telegram.ext.CommandHandler("dev", dev))
 
 updater.start_polling()
 updater.idle()
+
+updater.start_polling()
+updater.idle()
+
+
+
+#check
