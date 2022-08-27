@@ -1,24 +1,31 @@
 import telegram.ext
-token = "5391767465:AAF7WbcoMfVqdTwkntJBXdEr0fltr-8wfYU"
+import os
+from scrapper import name, price
+from dotenv import load_dotenv
 
-updater = telegram.ext.updater("5391767465:AAF7WbcoMfVqdTwkntJBXdEr0fltr-8wfYU", use_context = True)
+load_dotenv()
+token = os.getenv('token')
+updater = telegram.ext.Updater(token, use_context=True)
 dispatcher = updater.dispatcher
 
 def start(update, context):
-    update.message.reply_text("Hello to Simply Learn")
+    update.message.reply_text("""Hello, Welcome to Price_Checker Bot
+Use /help""")
 
 def help(update, context):
     update.message.reply_text(
         """
-        /start -> Welcome
-        /help -> Help
-        /run -> Runs the Program
-        /dev -> Directs to Developers Git Page
+         /start -> Welcome
+/help -> Help
+/run -> Runs the Program
+/dev -> Directs to Developers Git Page
+
         """
     )
 
 def run(update, context):
-    update.message.reply_text("Under Development")
+    update.message.reply_text(name)
+    update.message.reply_text(price)
 
 def dev(update, context):
     update.message.reply_text("https://github.com/DeKabilan")
