@@ -1,15 +1,32 @@
+from turtle import clear
 import requests
 from pprint import pprint
 from bs4 import BeautifulSoup
 
-req = requests.get("https://www.flipkart.com/search?q=laptop&otracker=search&otracker1=search&marketplace=FLIPKART&as-show=on&as=off")
+btc = requests.get("https://www.binance.com/en-IN/price/bitcoin")
 
-soup = BeautifulSoup(req.content, "html.parser")
+soupbtc = BeautifulSoup(btc.content, "html.parser")
 
-name = soup.find('div',class_="_4rR01T")
-name=name.text
-price = soup.find('div',class_="_30jeq3 _1_WHN1")
-price=price.text
 
-print(pprint(name))
-print(pprint(price))
+namebtc = soupbtc.find('div',class_="css-3wramu")
+pricebtc = soupbtc.find('div',class_="css-12ujz79")
+
+namebtc=namebtc.text
+pricebtc=pricebtc.text
+
+print(pprint(namebtc))
+print(pprint(pricebtc))
+
+eth = requests.get("https://www.binance.com/en-IN/price/ethereum")
+
+soupeth = BeautifulSoup(eth.content, "html.parser")
+
+nameeth = soupeth.find('div',class_="css-3wramu")
+priceeth = soupeth.find('div',class_="css-12ujz79")
+
+nameeth=nameeth.text
+priceeth=priceeth.text
+
+
+print(pprint(nameeth))
+print(pprint(priceeth))
