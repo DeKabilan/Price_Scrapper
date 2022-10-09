@@ -23,7 +23,7 @@ def start(update, context):
         """
          Welcome to Price_Checker BOT
 
-Use /help tp know the list of commands
+Use /help to know the list of commands
 
         """)
 
@@ -58,9 +58,8 @@ def queryHandler(update: Update, context = CallbackContext):
 
     if switcheth in query:
         buttons1 = [[KeyboardButton(nameeth)], [KeyboardButton(priceeth)]]
-        reply_markup=ReplyKeyboardMarkup(buttons1)
-        update.message.reply_text("Replying to text", reply_markup=reply_markup)
-        
+        context.bot.send_message(chat_id=update.effective_chat.id,text="ETH PRICE",
+     reply_markup=ReplyKeyboardMarkup(buttons1))
         
     if switchbtc in query:
         buttons1 = [[KeyboardButton(namebtc)], [KeyboardButton(pricebtc)]]

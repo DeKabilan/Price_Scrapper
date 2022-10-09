@@ -1,4 +1,3 @@
-from turtle import clear
 import requests
 from pprint import pprint
 from bs4 import BeautifulSoup
